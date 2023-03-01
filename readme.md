@@ -9,4 +9,5 @@ Each new line in the text area will generate a new code.
 ## To run the app
 1. Clone this repo
 1. From the repo directory run `npm install`
-1. Then `npm run preview` will host the app on http://localhost:4173/
+1. Then `npm run build`
+1. Then `npm run preview` which will host the app on http://localhost
