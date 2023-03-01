@@ -1,0 +1,9 @@
+#root {
+  padding: 2rem;
+  border: 1px black solid;
+}
+
+.text-area {
+  width:50%;
+  height:60px;
+}
