@@ -56,7 +56,7 @@ function App() {
     </div>
 
     <textarea 
-      className='text-area' 
+      className='text-area no-print' 
       placeholder="Add values here..."
       onChange={e => onChangeText(e.target.value)}>
     </textarea>
