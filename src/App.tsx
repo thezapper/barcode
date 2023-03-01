@@ -10,18 +10,30 @@ function Code(props: codeProps)
 {
   useEffect(
     () => {
-      JsBarcode("#bc"+props.id, props.text);
+      JsBarcode(
+        "#bc"+props.id, 
+        props.text, 
+        {
+          height:50,
+          margin:0
+        });
     });
 
   return (
     <div className="barcode">
-      <svg id={"bc"+props.id}></svg>
+      <div className='barcode-number'>
+        <span>{props.id + 1}</span>
+      </div>
+      <div className='barcode-image'>
+        <svg id={"bc"+props.id}></svg>
+      </div>
     </div>
   )
 }
 
 function App() {
   const [codeList, setCodes] = useState<string[]>([]);
+  const [numLines, setNumLines] = useState(0);
   
   useEffect(
     () => {
@@ -32,19 +44,26 @@ function App() {
   const onChangeText = (val: string) => 
   {
     const codeStrings = val.split('\n');
-    console.dir(codeStrings);
+    setNumLines(codeStrings.length);
     setCodes(codeStrings);
   }
 
   return (
     <div className="App">
 
+    <div className='line-numbers'>
+        <span></span>
+    </div>
+
     <textarea 
       className='text-area' 
       placeholder="Add values here..."
-      onChange={e => onChangeText(e.target.value)}></textarea>
-      
-      <div>
+      onChange={e => onChangeText(e.target.value)}>
+    </textarea>
+
+    <div>{numLines} codes entered</div>
+
+      <div className='code-grid'>
         {
           codeList.map( (val, idx) => val != '' ? <Code key={idx} text={val} id={idx}/> : null)
         }

@@ -1,9 +1,47 @@
 #root {
   padding: 2rem;
-  border: 1px black solid;
 }
 
 .text-area {
-  width:50%;
+  width:100%;
   height:60px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.code-grid {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+}
+
+.barcode {
+  border: 2px darkgray solid;
+  width:fit-content;
+  margin:auto;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1) ;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding-left: 60px;
+  height: fit-content;
+  position: relative;
+}
+.barcode-number {
+  position:absolute;
+  font-size:x-large;
+  //border: 1px rgb(30, 181, 75) solid;
+  //display: inline-block;
+  width: fit-content;
+  margin:auto;
+  top:50%;
+  left:5px;
+  transform: translateY(-50%);
+}
+.barcode-image {
+  padding: 10px;
+  //border: 1px blueviolet solid;
+  //display: inline-block;
+  width: fit-content;
+  //margin:auto;
+
 }
